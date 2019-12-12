@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ATRIA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar brand">
+        <a class="navbar brand" href="/">HOME<span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <h1 id="title">EVENT REGISTRATION</h1>
+  <div id="form-outer">
+    <p id="description">Please Enter Valid Credentials.</p>
+
+    <form id="survey-form" action = "EventStep1" method="POST">
+        {% csrf_token %}
+        <div class="rowTab">
+          <div class="label">
+            <label id="DEPARTMENT" for="DEPARTMENT"></label>
+          <div class="rightTab">
+            <input autofocus type="text" name="cname" id="cname" class="input-field" placeholder="client name">
+            </div>
+        <br>
+        <div class="rowTab">
+          <div class="label">
+            <label id="DEPARTMENT" for="DEPARTMENT"></label>
+          <div class="rightTab">
+            <input autofocus type="number" name="pno" id="pno" class="input-field" placeholder="phone number">
+          </div>
+        </div>
+        </div>
+            <br>
+            <div class="rowTab">
+              <div class="label">
+                <label id="DEPARTMENT" for="DEPARTMENT"></label>
+              <div class="rightTab">
+                <input autofocus type="email" name="eid" id="eid" class="input-field" placeholder="email id">
+                </div>
+              </div>
+            </div>
+              <br>
+      <div class="rowTab">
+        <div class="label">
+          <label id="DEPARTMENT" for="DEPARTMENT"></label>
+        <div class="rightTab">
+          <input autofocus type="text" name="ename" id="ename" class="input-field" placeholder="event name">
+          </div>
+        </div>
+      </div>
+                  <br>
+      <div class="rowTab">
+          <div class="label">
+              <label id="DEPARTMENT" for="DEPARTMENT">start date</label>
+              <div class="rightTab">
+                <input type="date" name="esdate" id="esdate" placeholder="start date">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="rowTab">
+              <div class="label">
+                  <label id="DEPARTMENT" for="DEPARTMENT">end date</label>
+                  <div class="rightTab">
+                    <input type="date" name="eedate" id="eedate" placeholder="end date">
+                  </div>
+                </div>
+              </div>
+
+              <br>
+          <div class="rowTab">
+            <div class="label">
+              <label for="appt">start time:</label>
+
+              <input type="time" id="estime" name="estime"
+                     min="09:00" max="18:00" required>
+             </div>
+          </div>
+          <br>
+          <div class="rowTab">
+            <div class="label">
+
+              <label for="appt">end time:</label>
+
+              <input type="time" id="eetime" name="eetime"
+                     min="09:00" max="18:00" required>
+              </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Next</button>
+
+
+      </form>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+<style media="screen">
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+
+html, body{
+text-align:center;
+background-color: #000000;
+color:#eaeaea;
+font-family: 'Heebo', sans-serif;
+min-width:320px;
+}
+header {
+font-size: 2em;
+font-weight: bold;
+margin: 20px;
+}
+#form-outer{
+background-color:#c91010;
+margin: 0 auto;
+width:75%;
+border-radius:4px;
+max-width:900px;
+padding: 10px;
+padding-top:20px;
+}
+.label{
+  position: relative;
+display: inline-block;
+text-align:justify;
+width:40%;
+padding:5px;
+vertical-align:top;
+margin-top:10px;
+font-weight: bold;
+}
+.rightTab{
+
+display:inline-block;
+align:center;
+width:48%;
+vertical-align:middle;
+}
+.input-field {
+height: 30px;
+width: 280px;
+padding: 5px;
+margin: 10px;
+border: 1px solid #c0c0c0;
+border-radius: 2px;
+}
+.dropdown{
+  position: relative; /* Enable absolute positioning for children and pseudo elements */
+     width: 775px;
+     padding: 10px;
+}
+.radio,checkbox{
+position: relative;
+left: -43px;
+margin-left: 10px;
+display: block;
+padding-bottom: 10px;
+}
+.userRatings,
+input[type="checkbox"] {
+float: left;
+margin-right: 5px;
+}
+#submit {
+background-color: #000000;
+border-radius: 4px;
+color: white;
+font-size: 1em;
+height: 40px;
+width: 96px;
+margin: 10px;
+border: 0px solid;
+}
+@media screen and (max-width: 833px) {
+.input-field {
+  width: 80%;
+}
+select {
+  width: 90%;
+}
+}
+
+@media screen and (max-width: 520px) {
+
+
+.input-field {
+  width: 100%;
+}
+select {
+  width: 100%;
+}
+}
+
+</style>
